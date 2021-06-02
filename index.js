@@ -7,15 +7,14 @@ const app = express();
 
 //Configuraciones
 app.set('port', 3000);
+app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'ejs');
 
 //middlewares
 
 
 //Enrutamiento
-app.get('/', (req, res)=>{
-    res.render('index.ejs');
-});
+app.use(require('./routes/routes'));
 
 //Archivos estaticos
 
